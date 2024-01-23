@@ -4,7 +4,7 @@ from keras.models import load_model
 from keras.preprocessing import image
 
 # Load the pre-trained model
-model = load_model('C:\\Users\\pk540\\OneDrive\\Desktop\\Brain_tumour\\my_model.h5')
+model = load_model('./my_model.h5')
 
 # Function to preprocess an image for prediction
 def preprocess_image(img_path):
