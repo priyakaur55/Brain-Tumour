@@ -33,12 +33,11 @@ def main():
             prediction = model.predict(img_array)
 
             # Display prediction
-            st.subheader("Prediction:")
-            st.json({
-                'No Tumor': prediction[0][0],
-                'Glioma Tumor': prediction[0][1],
-                'Meningioma Tumor': prediction[0][2],
-                'Pituitary Tumor': prediction[0][3],
-            })
+            tumor_types = ["No Tumor", "Glioma Tumor", "Meningioma Tumor", "Pituitary Tumor"]
+            predicted_tumor = tumor_types[np.argmax(prediction)]
 
+            st.subheader("Prediction:")
+            st.write(f"The predicted tumor type is: {predicted_tumor}")
+
+           
 main: main()
